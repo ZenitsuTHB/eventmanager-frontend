@@ -6,8 +6,8 @@ import { getStorage } from 'firebase/storage';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCpRlI85rVRAtoaXZFxtlDrZW6t4AsFR_A",
-  projectId: "people-4b7a3",
+  apiKey: "",
+  projectId: "",
 };
 // const firebaseConfig = {
 //   apiKey: import.meta.env.VITE_API_KEY,

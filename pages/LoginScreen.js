@@ -18,7 +18,7 @@ export default function LoginScreen() {
 
 
   const [request, response, promptAsync] = Google.useAuthRequest({
-    clientId: '316030030857-fbatsfmgm34l3svjvbou7vc2gqsimkn1.apps.googleusercontent.com',
+    clientId: 'null to replace',
     responseType: 'id_token',
     redirectUri: REDIRECT_URI,
     scopes: ['openid', 'profile', 'email'],
