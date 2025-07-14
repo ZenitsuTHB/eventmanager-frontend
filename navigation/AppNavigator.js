@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-//import ProfileScreen from '../pages/ProfileScreen';
+import ProfileScreen from '../pages/ProfileScreen';
 // import CreateEventScreen from '../pages/CreateEventScreen';
 // import EventsListScreen from '../pages/EventsListScreen';
 // import EventDetailScreen from '../pages/EventDetailScreen';
@@ -10,7 +10,7 @@ const Stack = createNativeStackNavigator();
 export default function AppNavigator() {
   return (
     <Stack.Navigator>
-      {/* <Stack.Screen name="Profile" component={ProfileScreen} /> */}
+      {<Stack.Screen name="Profile" component={ProfileScreen} />}
     </Stack.Navigator>
   );
 }
