@@ -37,11 +37,22 @@ export default function EventsListScreen() {
   }, []);
 
   const renderItem = ({ item }) => (
-    <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('EventDetails', { eventId: item.id })}>
-      <Text style={styles.title}>{item.title}</Text>
-      <Text style={styles.date}>{new Date(item.date).toLocaleDateString()}</Text>
-    </TouchableOpacity>
+    <View style={styles.card}>
+      <TouchableOpacity onPress={() => navigation.navigate('EventDetails', { eventId: item.id })}>
+        <Text style={styles.title}>{item.title}</Text>
+        <Text style={styles.date}>{new Date(item.date).toLocaleDateString()}</Text>
+      </TouchableOpacity>
+
+      {/* Botón para inscribirse */}
+      <TouchableOpacity
+        style={styles.signupButton}
+        onPress={() => navigation.navigate('EventSignUp', { eventId: item.id })}
+      >
+        <Text style={styles.signupText}>Inscribirse</Text>
+      </TouchableOpacity>
+    </View>
   );
+
 
   if (loading) return <ActivityIndicator size="large" style={{ flex: 1 }} />;
 
@@ -89,4 +100,18 @@ const styles = StyleSheet.create({
   fab: { position: 'absolute', bottom: 20, right: 20 },
   noEventsBox: { flex: 1, justifyContent: 'center', alignItems: 'center' },
   noEventsText: { fontSize: 18, color: '#888' },
+  signupButton: {
+    position: 'absolute',
+    bottom: 10,
+    right: 10,
+    backgroundColor: '#4CAF50',
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    borderRadius: 5,
+  },
+  signupText: {
+    color: '#fff',
+    fontWeight: 'bold',
+  },
+
 });

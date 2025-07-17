@@ -6,8 +6,8 @@ import { AuthContext } from '../contexts/AuthContext';
 import { loginWithGoogleFirebase } from '../services/auth';
 import { makeRedirectUri } from 'expo-auth-session';
 
-const REDIRECT_URI = makeRedirectUri({ useProxy: true }); //'https://auth.expo.io/@archly/frontend';
-
+const REDIRECT_URI = makeRedirectUri({ useProxy: true }); //'https://auth.expo.io/@archly/frontend' // 'https://ocoyrbo-archly-8081.exp.direct' // makeRedirectUri({ useProxy: true }); //'https://auth.expo.io/@archly/frontend';
+console.log('🔴 REDIRECT_URI:', REDIRECT_URI);
 WebBrowser.maybeCompleteAuthSession();
 
 export default function LoginScreen() {
@@ -18,7 +18,7 @@ export default function LoginScreen() {
     redirectUri: REDIRECT_URI,
     responseType: 'id_token',
     scopes: ['openid', 'profile', 'email'],
-    // useProxy: true,
+    useProxy: true,
     usePKCE: false,
   });
 

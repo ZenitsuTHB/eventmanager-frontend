@@ -5,7 +5,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from '../pages/LoginScreen';
 import EventsListScreen from '../pages/EventsListScreen';
 import ProfileScreen from '../pages/ProfileScreen';
-// import CreateEventScreen from '../screens/CreateEventScreen';
+import CreateEventScreen from '../pages/CreateEventScreen';
+import EventSignUpScreen from '../pages/EventSignUpScreen';
+import EventDetailScreen from '../pages/EventDetailScreen';
 
 import { AuthContext } from '../contexts/AuthContext';
 
@@ -20,6 +22,9 @@ export default function AppNavigator() {
         <>
           <Stack.Screen name="EventsList" component={EventsListScreen} />
           <Stack.Screen name="Profile" component={ProfileScreen} />
+          <Stack.Screen name="CreateEvent" component={CreateEventScreen} />
+          <Stack.Screen name="EventSignUp" component={EventSignUpScreen} />
+          <Stack.Screen name="EventDetails" component={EventDetailScreen} />
         </>
       ) : (
         <Stack.Screen name="Login" component={LoginScreen} />
@@ -33,5 +38,5 @@ export default function AppNavigator() {
 
 {/* <Stack.Screen name="Events" component={EventsListScreen} /> */ }
 //   <Stack.Screen name="EventDetail" component={EventDetailScreen} />
-//   <Stack.Screen name="CreateEvent" component={CreateEventScreen} />
+
 //   <Stack.Screen name="Contribution" component={ContributionScreen} />
